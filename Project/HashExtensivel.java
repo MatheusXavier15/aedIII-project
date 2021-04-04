@@ -98,11 +98,12 @@ public class HashExtensivel<T extends RegistroHashExtensivel<T>> {
       if (empty())
         return null;
       int i = 0;
-      while (i < quantidade && chave > elementos.get(i).hashCode())
+      while (i < quantidade && elementos.get(i).hashCode(chave)==false){
         i++;
-      if (i < quantidade && chave == elementos.get(i).hashCode())
-        return elementos.get(i);
-      else
+      }
+      if( i < quantidadeMaxima && elementos.get(i).hashCode(chave)==true ){
+        return this.elementos.get(i);
+      } else
         return null;
     }
 
