@@ -246,7 +246,7 @@ public class HashExtensivel<T extends RegistroHashExtensivel<T>> {
     // Para efeito de determinar o cesto em que o elemento deve ser inserido,
     // só serão considerados valores absolutos da chave.
     protected int hash(int chave) {
-      return Math.abs(chave) % (int) Math.pow(2, profundidadeGlobal);
+      return Math.abs(chave) % 2;
     }
 
     protected int hash2(int chave, int pl) { // cálculo do hash para uma dada profundidade local
